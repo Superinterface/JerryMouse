@@ -1,0 +1,5 @@
+<controllers>
+
+    <controller class="www.superinterface.xyz.controller.helloController"></controller>
+
+</controllers>
