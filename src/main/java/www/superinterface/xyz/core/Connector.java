@@ -44,7 +44,7 @@ public class Connector implements Runnable {
         // 静态资源文件,加载文件流,根据文件后缀名设置对应的Content-Type进行响应.
         // 动态请求,则进入RequestMapping查找是否有对应的处理程序,有则进行调用处理,无则响应404.
         String url = this.request.getHttpUrl();
-        String suffix = url.contains(".") ? url.substring(url.lastIndexOf("."), url.length()) : null;
+        String suffix = url.contains(".") ? url.substring(url.lastIndexOf(".")+1, url.length()) : null;
         Map<String, String> mimeMapping = ServerEngine.getMimeMap();
         // 是否为静态资源文件
         if (suffix != null && mimeMapping.containsKey(suffix)) {
